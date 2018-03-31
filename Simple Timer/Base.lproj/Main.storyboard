@@ -22,11 +22,23 @@
                                 <rect key="frame" x="0.0" y="734" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="-10" id="GCZ-1e-fpk"/>
+                                    <barButtonItem title="-10" id="GCZ-1e-fpk">
+                                        <connections>
+                                            <action selector="minusDidPress:" destination="BYZ-38-t0r" id="kP5-e0-eBD"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Rhh-0H-qJE"/>
-                                    <barButtonItem title="Reset" id="Pv1-qO-nc9"/>
+                                    <barButtonItem title="Reset" id="Pv1-qO-nc9">
+                                        <connections>
+                                            <action selector="resetDidPress:" destination="BYZ-38-t0r" id="h2T-Tq-Wnr"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="VnG-rg-WpP"/>
-                                    <barButtonItem title="+10" id="5jf-Iq-gHo"/>
+                                    <barButtonItem title="+10" id="5jf-Iq-gHo">
+                                        <connections>
+                                            <action selector="plusDidPress:" destination="BYZ-38-t0r" id="ac8-f6-9mQ"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nlq-Ge-977">
@@ -34,8 +46,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Timer" id="KtL-ij-KIc">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="pause" id="Gu7-l3-vfi"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="O2K-k6-6hN"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="pause" id="Gu7-l3-vfi">
+                                            <connections>
+                                                <action selector="pauseDidPress:" destination="BYZ-38-t0r" id="izs-hK-oFZ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="O2K-k6-6hN">
+                                            <connections>
+                                                <action selector="playDidPress:" destination="BYZ-38-t0r" id="9oc-AC-dbA"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -61,6 +81,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="playButton" destination="O2K-k6-6hN" id="3VZ-2O-NbF"/>
+                        <outlet property="tickLabel" destination="jzE-e9-L3b" id="jw0-sx-xZz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
