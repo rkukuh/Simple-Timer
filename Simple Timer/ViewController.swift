@@ -9,17 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var timer = Timer()
+    
+    @objc func printToConsole() {
+        print("Tulisan ini muncul setiap 2 detik sekali")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        timer = Timer.scheduledTimer(timeInterval: 2,
+                                     target: self,
+                                     selector: #selector(printToConsole),
+                                     userInfo: nil,
+                                     repeats: true)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
-
